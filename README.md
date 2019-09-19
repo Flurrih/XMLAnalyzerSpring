@@ -21,7 +21,7 @@ Date: Thu, 19 Sep 2019 14:55:42 GMT
 
 1. Pull image from docker's hub (https://hub.docker.com/r/flurrih/data-analysis-spring-image)
 ```
-docker pull flurrih/data-analysis-spring-image
+docker pull flurrih/data-analysis-spring-image:1
 ```
 2. Check if image was downloaded succesfully
 ```
