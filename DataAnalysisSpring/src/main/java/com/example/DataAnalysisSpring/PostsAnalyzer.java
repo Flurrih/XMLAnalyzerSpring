@@ -37,8 +37,9 @@ public class PostsAnalyzer {
     }
 
     public Details buildDetails() {
-        DateTimeFormatter formatter = DateTimeFormatter.ISO_OFFSET_DATE_TIME; // Java 8 feature
-        return new Details(firstPost.format(formatter), lastPost.format(formatter), totalPosts, totalAcceptedPosts, avgScore);
+        //DateTimeFormatter formatter = DateTimeFormatter.ISO_OFFSET_DATE_TIME; // Java 8 feature
+        return new Details(DateUtilities.ConvertZonedDateTimeToString(firstPost), DateUtilities.ConvertZonedDateTimeToString(lastPost),
+                            totalPosts, totalAcceptedPosts, avgScore);
     }
 
     public ZonedDateTime getFirstPost() {

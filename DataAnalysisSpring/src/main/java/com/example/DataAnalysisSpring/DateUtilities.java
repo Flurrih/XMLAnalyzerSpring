@@ -1,28 +1,30 @@
 package com.example.DataAnalysisSpring;
 
-import org.graalvm.compiler.replacements.nodes.CStringConstant;
-
-import javax.swing.text.Element;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 public final class DateUtilities {
-
     public enum Zone {
         POLAND("Europe/Warsaw");
 
         public final String zone;
 
-        private Zone(String zone) {
+        Zone(String zone) {
             this.zone = zone;
+        }
+
+        public String toString() {
+            return this.zone;
         }
     }
 
+    private static DateTimeFormatter localDateTimeFormatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
+    private static DateTimeFormatter offsetDateTimeFormatter = DateTimeFormatter.ISO_OFFSET_DATE_TIME;
+
     public static LocalDateTime ParseStringToLocalDateTime(String date) {
-        DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
-        return LocalDateTime.parse(date, formatter);
+        return LocalDateTime.parse(date, localDateTimeFormatter);
     }
 
     public static ZonedDateTime ConvertLocalToZonedDateTime(LocalDateTime date, Zone zone) {
@@ -33,5 +35,12 @@ public final class DateUtilities {
     public static ZonedDateTime ParseStringToZonedDateTime(String date, Zone zone) {
         LocalDateTime localDate = ParseStringToLocalDateTime(date);
         return ConvertLocalToZonedDateTime(localDate, zone);
+    }
+
+    public static String ConvertZonedDateTimeToString(ZonedDateTime date) {
+        return date.format(offsetDateTimeFormatter);
+    }
+    public static String ConvertLocalDateTimeToString(LocalDateTime date) {
+        return date.format(localDateTimeFormatter);
     }
 }

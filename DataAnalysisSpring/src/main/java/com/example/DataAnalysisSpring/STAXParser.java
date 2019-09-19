@@ -39,10 +39,10 @@ public class STAXParser {
                 if (xmlEvent.isStartElement()){
                     StartElement startElement = xmlEvent.asStartElement();
                     if(startElement.getName().getLocalPart().equals("row")){
-                        LocalDateTime creationDate =
-                                DateUtilities.ParseStringToLocalDateTime(startElement.getAttributeByName(new QName("CreationDate")).getValue());
-                        ZoneId zoneId = ZoneId.of("Europe/Warsaw");
-                        analyzer.analyzeDate(creationDate.atZone(zoneId));
+                        ZonedDateTime creationDate = DateUtilities.ParseStringToZonedDateTime(
+                                startElement.getAttributeByName(new QName("CreationDate")).getValue(),
+                                DateUtilities.Zone.POLAND);
+                        analyzer.analyzeDate(creationDate);
                         if(startElement.getAttributeByName(new QName("AcceptedAnswerId")) != null)
                             analyzer.incrementTotalAcceptedPosts();
                         analyzer.incrementTotalPosts();
@@ -56,10 +56,5 @@ public class STAXParser {
             e.printStackTrace();
         }
         return analyzer.buildDetails();
-    }
-
-    private static LocalDateTime parseDate(String date) throws ParseException {
-        DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
-        return LocalDateTime.parse(date, formatter);
     }
 }
