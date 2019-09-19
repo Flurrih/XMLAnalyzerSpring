@@ -1,0 +1,8 @@
+com\example\DataAnalysisSpring\DataAnalysisSpringApplication.class
+com\example\DataAnalysisSpring\STAXParser.class
+com\example\DataAnalysisSpring\InvalidUrlException.class
+com\example\DataAnalysisSpring\PostsAnalyzer.class
+com\example\DataAnalysisSpring\models\Details.class
+com\example\DataAnalysisSpring\controller\AnalyzerExceptionHandler.class
+com\example\DataAnalysisSpring\models\AnalysisResponse.class
+com\example\DataAnalysisSpring\models\AnalysisRequest.class
