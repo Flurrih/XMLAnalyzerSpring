@@ -8,4 +8,4 @@
   <row Id="7" PostTypeId="1" CreationDate="2015-07-14T21:54:34.180" Score="4" ViewCount="85" Body="Body 7" OwnerUserId="42" LastActivityDate="2015-07-21T15:50:12.163" Title="Shouldn't we discuss using transliterations?" Tags="&lt;discussion&gt;" AnswerCount="2" CommentCount="1"/>
   <row Id="8" PostTypeId="1" CreationDate="2015-07-14T22:02:58.073" Score="6" ViewCount="105" Body="Body 8" Tags="&lt;discussion&gt;" AnswerCount="2" CommentCount="0"/>
   <row Id="9" PostTypeId="2" ParentId="7" CreationDate="2015-07-14T22:28:24.197" Score="2" Body="Body 9" OwnerUserId="10" LastActivityDate="2015-07-14T22:28:24.197" CommentCount="4"/>
-<posts>
+</posts>
