@@ -2,8 +2,6 @@ package com.example.DataAnalysisSpring;
 
 import com.example.DataAnalysisSpring.models.Details;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.junit.MockitoJUnitRunner;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -11,7 +9,7 @@ import java.net.URL;
 import static org.junit.Assert.assertEquals;
 
 
-public class STAXParserUnitTest {
+public class STAXParserTest {
     @Test
     public void shouldReturnCorrectDetailsFromXML() throws MalformedURLException {
         URL url = new URL("https://raw.githubusercontent.com/Flurrih/XMLAnalyzerSpring/master/testSample.xml");

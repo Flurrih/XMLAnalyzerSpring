@@ -2,8 +2,8 @@ package com.example.DataAnalysisSpring.models;
 
 
 public class AnalysisResponse {
-    String analyseDate;
-    Details details;
+    private String analyseDate;
+    private Details details;
 
     public String getAnalyseDate() {
         return analyseDate;

@@ -1,11 +1,11 @@
 package com.example.DataAnalysisSpring.models;
 
 public final class Details {
-    String firstPost;
-    String lastPost;
-    int totalPosts;
-    int totalAcceptedPosts;
-    int avgScore;
+    private final String firstPost;
+    private final String lastPost;
+    private final int totalPosts;
+    private final int totalAcceptedPosts;
+    private final int avgScore;
 
     public Details(String firstPost, String lastPost, int totalPosts, int totalAcceptedPosts, int avgScore) {
         this.firstPost = firstPost;

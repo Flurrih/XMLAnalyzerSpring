@@ -4,6 +4,8 @@ com\example\DataAnalysisSpring\models\Details.class
 com\example\DataAnalysisSpring\models\AnalysisRequest.class
 com\example\DataAnalysisSpring\STAXParser.class
 com\example\DataAnalysisSpring\InvalidUrlException.class
+com\example\DataAnalysisSpring\controller\AnalyzerController.class
+com\example\DataAnalysisSpring\ErrorResponse.class
 com\example\DataAnalysisSpring\DateUtilities$Zone.class
 com\example\DataAnalysisSpring\DateUtilities.class
 com\example\DataAnalysisSpring\controller\AnalyzerExceptionHandler.class

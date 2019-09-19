@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter;
 
 import static org.junit.Assert.assertEquals;
 
-public class PostsAnalyzerUnitTest {
+public class PostsAnalyzerTest {
     private PostsAnalyzer postsAnalyzer;
 
     @Before
@@ -19,7 +19,7 @@ public class PostsAnalyzerUnitTest {
     }
 
     @Test
-    public void shouldSetFirstAndLastPost() {
+    public void shouldSetFirstAndLastPostWithSameValue() {
         ZonedDateTime time = ZonedDateTime.now();
         postsAnalyzer.analyzeDate(time);
         assertEquals(time, postsAnalyzer.getFirstPost());
@@ -27,7 +27,7 @@ public class PostsAnalyzerUnitTest {
     }
 
     @Test
-    public void shouldSetFirstAndLastPostDifferent() {
+    public void shouldSetFirstAndLastPostWithDifferentValue() {
         ZonedDateTime timeBefore = ZonedDateTime.now().minusYears(1);
         ZonedDateTime timeAfter = ZonedDateTime.now().plusYears(1);
         postsAnalyzer.analyzeDate(timeBefore);

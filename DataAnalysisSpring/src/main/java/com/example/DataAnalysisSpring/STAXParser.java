@@ -28,12 +28,13 @@ public class STAXParser {
                     if(startElement.getName().getLocalPart().equals("row")){
                         ZonedDateTime creationDate = DateUtilities.ParseStringToZonedDateTime(
                                 startElement.getAttributeByName(new QName("CreationDate")).getValue(),
-                                DateUtilities.Zone.POLAND);
+                                                                DateUtilities.Zone.POLAND);
                         analyzer.analyzeDate(creationDate);
                         if(startElement.getAttributeByName(new QName("AcceptedAnswerId")) != null)
                             analyzer.incrementTotalAcceptedPosts();
                         analyzer.incrementTotalPosts();
-                        analyzer.countAvgScore(Integer.parseInt(startElement.getAttributeByName(new QName("Score")).getValue()));
+                        int score = Integer.parseInt(startElement.getAttributeByName(new QName("Score")).getValue());
+                        analyzer.countAvgScore(score);
                     }
                 }
             }

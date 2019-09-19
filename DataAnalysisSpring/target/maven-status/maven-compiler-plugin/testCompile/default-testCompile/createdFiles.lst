@@ -1,1 +1,5 @@
+com\example\DataAnalysisSpring\STAXParserUnitTest.class
 com\example\DataAnalysisSpring\DataAnalysisSpringApplicationTests.class
+com\example\DataAnalysisSpring\AnalyzerControllerTest.class
+com\example\DataAnalysisSpring\DateUtilitiesTest.class
+com\example\DataAnalysisSpring\PostsAnalyzerUnitTest.class

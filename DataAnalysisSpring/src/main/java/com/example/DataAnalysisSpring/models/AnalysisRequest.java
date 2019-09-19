@@ -1,7 +1,7 @@
 package com.example.DataAnalysisSpring.models;
 
 public class AnalysisRequest {
-    String url;
+    private String url;
 
     public String getUrl() {
         return url;

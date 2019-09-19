@@ -7,7 +7,7 @@ import java.time.*;
 public class PostsAnalyzer {
 
     private ZonedDateTime firstPost; // Java 8 feature
-    private ZonedDateTime lastPost; // Java 8 feature
+    private ZonedDateTime lastPost;
     private int totalPosts;
     private int totalAcceptedPosts;
     private int avgScore;

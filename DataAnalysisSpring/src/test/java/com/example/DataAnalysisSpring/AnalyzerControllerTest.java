@@ -50,7 +50,8 @@ public class AnalyzerControllerTest {
                 .andExpect(status().isOk())
                 .andReturn();
 
-        List<String> expectedStrings = Arrays.asList("analyseDate", "details", "firstPost", "lastPost", "totalPosts", "totalAcceptedPosts", "avgScore");
+        List<String> expectedStrings =
+                Arrays.asList("analyseDate", "details", "firstPost", "lastPost", "totalPosts", "totalAcceptedPosts", "avgScore");
         String resultString = result.getResponse().getContentAsString();
         assertThat(resultString, Matchers.stringContainsInOrder(expectedStrings));
     }

@@ -1,7 +1,8 @@
 # Compiled class file
 *.class
 
-.idea/
+DataAnalysisSpring/.idea/
+DataAnalysisSpring/target/
 
 # Log file
 *.log

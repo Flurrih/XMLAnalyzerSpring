@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 
 public final class DateUtilities {
     public enum Zone {
@@ -21,7 +22,10 @@ public final class DateUtilities {
     }
 
     private static DateTimeFormatter localDateTimeFormatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
-    private static DateTimeFormatter offsetDateTimeFormatter = DateTimeFormatter.ISO_OFFSET_DATE_TIME;
+    private static DateTimeFormatter offsetDateTimeFormatter = new DateTimeFormatterBuilder()
+                                                                    .append(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
+                                                                    .appendPattern("xxx")
+                                                                    .toFormatter();
 
     public static LocalDateTime ParseStringToLocalDateTime(String date) {
         return LocalDateTime.parse(date, localDateTimeFormatter);
