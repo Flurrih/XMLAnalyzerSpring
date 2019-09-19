@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a61f5d1a-53e8-41bb-bacf-9258ec9d9bcd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/DataAnalysisSpring/DateUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/DataAnalysisSpring/DateUtilities.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/DataAnalysisSpring/PostsAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/DataAnalysisSpring/PostsAnalyzer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/DataAnalysisSpring/STAXParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/DataAnalysisSpring/STAXParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/DataAnalysisSpring/controller/AnalyzerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/DataAnalysisSpring/controller/AnalyzerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/DataAnalysisSpring/AnalyzerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/DataAnalysisSpring/AnalyzerControllerTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,6 +34,11 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.DataAnalysisSpring" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -46,7 +51,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AnalyzerControllerTest">
+  <component name="RunManager" selected="JUnit.AnalyzerExceptionHandlerTest">
     <configuration name="AnalyzerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DataAnalysisSpring" />
       <extension name="coverage">
@@ -62,6 +67,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AnalyzerExceptionHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DataAnalysisSpring" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.DataAnalysisSpring.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.DataAnalysisSpring" />
+      <option name="MAIN_CLASS_NAME" value="com.example.DataAnalysisSpring.AnalyzerExceptionHandlerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DateUtilitiesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DataAnalysisSpring" />
       <extension name="coverage">
@@ -72,21 +92,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.example.DataAnalysisSpring" />
       <option name="MAIN_CLASS_NAME" value="com.example.DataAnalysisSpring.DateUtilitiesTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PostsAnalyzerUnitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DataAnalysisSpring" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.DataAnalysisSpring.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.DataAnalysisSpring" />
-      <option name="MAIN_CLASS_NAME" value="com.example.DataAnalysisSpring.PostsAnalyzerUnitTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -123,11 +128,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AnalyzerExceptionHandlerTest" />
         <item itemvalue="JUnit.AnalyzerControllerTest" />
         <item itemvalue="JUnit.DateUtilitiesTest" />
         <item itemvalue="JUnit.STAXParserUnitTest" />
         <item itemvalue="JUnit.com.example.DataAnalysisSpring in DataAnalysisSpring" />
-        <item itemvalue="JUnit.PostsAnalyzerUnitTests" />
       </list>
     </recent_temporary>
   </component>

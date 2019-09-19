@@ -1,4 +1,5 @@
 package com.example.DataAnalysisSpring.controller;
+import com.example.DataAnalysisSpring.DateUtilities;
 import com.example.DataAnalysisSpring.InvalidUrlException;
 import com.example.DataAnalysisSpring.STAXParser;
 import org.springframework.http.HttpStatus;
@@ -8,9 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import com.example.DataAnalysisSpring.models.*;
 
 import java.net.URL;
-import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
 
 @RestController
 public class AnalyzerController {
@@ -18,8 +17,7 @@ public class AnalyzerController {
     @PostMapping(value = "/analyze")
     public ResponseEntity<AnalysisResponse> Analyze(@RequestBody AnalysisRequest inputPayload) {
         AnalysisResponse response = new AnalysisResponse();
-        String zonedTimeNowString =
-                ZonedDateTime.now(ZoneId.of("Europe/Warsaw")).format(DateTimeFormatter.ISO_OFFSET_DATE_TIME);
+        String zonedTimeNowString = DateUtilities.ConvertZonedDateTimeToString(ZonedDateTime.now());
         response.setAnalyseDate(zonedTimeNowString);
         String urlString = inputPayload.getUrl();
         try {

@@ -3,7 +3,6 @@ package com.example.DataAnalysisSpring;
 import com.example.DataAnalysisSpring.models.Details;
 
 import java.time.*;
-import java.time.format.DateTimeFormatter;
 
 public class PostsAnalyzer {
 
@@ -37,7 +36,6 @@ public class PostsAnalyzer {
     }
 
     public Details buildDetails() {
-        //DateTimeFormatter formatter = DateTimeFormatter.ISO_OFFSET_DATE_TIME; // Java 8 feature
         return new Details(DateUtilities.ConvertZonedDateTimeToString(firstPost), DateUtilities.ConvertZonedDateTimeToString(lastPost),
                             totalPosts, totalAcceptedPosts, avgScore);
     }
