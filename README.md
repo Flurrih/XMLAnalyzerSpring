@@ -20,6 +20,9 @@ $ curl -i -X POST -H "Content-Type:application/json" -d "{ \"url\": \"https://ra
 ```
 
 **Docker**
+Newest version od image: flurrih/data-analysis-spring-image:2
+https://hub.docker.com/layers/flurrih/data-analysis-spring-image/2/images/sha256-a8e5d613278b8d368a51aafa4dc045888257d493fe6cf958a7e20f393acc5840
+
 
 1. Pull image from docker's hub (https://hub.docker.com/r/flurrih/data-analysis-spring-image)
 ```
