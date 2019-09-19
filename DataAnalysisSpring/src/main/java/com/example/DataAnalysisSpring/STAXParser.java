@@ -21,6 +21,8 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,8 +39,10 @@ public class STAXParser {
                 if (xmlEvent.isStartElement()){
                     StartElement startElement = xmlEvent.asStartElement();
                     if(startElement.getName().getLocalPart().equals("row")){
-                        LocalDateTime creationDate = parseDate(startElement.getAttributeByName(new QName("CreationDate")).getValue());
-                        analyzer.analyzeDate(creationDate);
+                        LocalDateTime creationDate =
+                                DateUtilities.ParseStringToLocalDateTime(startElement.getAttributeByName(new QName("CreationDate")).getValue());
+                        ZoneId zoneId = ZoneId.of("Europe/Warsaw");
+                        analyzer.analyzeDate(creationDate.atZone(zoneId));
                         if(startElement.getAttributeByName(new QName("AcceptedAnswerId")) != null)
                             analyzer.incrementTotalAcceptedPosts();
                         analyzer.incrementTotalPosts();
@@ -47,8 +51,6 @@ public class STAXParser {
                 }
             }
         } catch (FileNotFoundException | XMLStreamException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();

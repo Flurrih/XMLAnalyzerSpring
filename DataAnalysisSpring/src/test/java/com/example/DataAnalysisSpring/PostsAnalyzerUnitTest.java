@@ -5,11 +5,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 import static org.junit.Assert.assertEquals;
 
-public class PostsAnalyzerUnitTests {
+public class PostsAnalyzerUnitTest {
     private PostsAnalyzer postsAnalyzer;
 
     @Before
@@ -19,7 +20,7 @@ public class PostsAnalyzerUnitTests {
 
     @Test
     public void shouldSetFirstAndLastPost() {
-        LocalDateTime time = LocalDateTime.now();
+        ZonedDateTime time = ZonedDateTime.now();
         postsAnalyzer.analyzeDate(time);
         assertEquals(time, postsAnalyzer.getFirstPost());
         assertEquals(time, postsAnalyzer.getLastPost());
@@ -27,8 +28,8 @@ public class PostsAnalyzerUnitTests {
 
     @Test
     public void shouldSetFirstAndLastPostDifferent() {
-        LocalDateTime timeBefore = LocalDateTime.now().minusYears(1);
-        LocalDateTime timeAfter = LocalDateTime.now().plusYears(1);
+        ZonedDateTime timeBefore = ZonedDateTime.now().minusYears(1);
+        ZonedDateTime timeAfter = ZonedDateTime.now().plusYears(1);
         postsAnalyzer.analyzeDate(timeBefore);
         postsAnalyzer.analyzeDate(timeAfter);
         assertEquals(timeBefore, postsAnalyzer.getFirstPost());
@@ -58,8 +59,8 @@ public class PostsAnalyzerUnitTests {
 
     @Test
     public void shouldBuildCorrectDetails() {
-        LocalDateTime time = LocalDateTime.now();
-        String timeString = time.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+        ZonedDateTime time = ZonedDateTime.now();
+        String timeString = time.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME);
         postsAnalyzer.analyzeDate(time);
         postsAnalyzer.incrementTotalPosts();
         postsAnalyzer.incrementTotalAcceptedPosts();

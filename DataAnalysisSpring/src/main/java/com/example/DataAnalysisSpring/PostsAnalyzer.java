@@ -2,25 +2,13 @@ package com.example.DataAnalysisSpring;
 
 import com.example.DataAnalysisSpring.models.Details;
 
-import javax.xml.namespace.QName;
-import javax.xml.stream.XMLEventReader;
-import javax.xml.stream.XMLInputFactory;
-import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.events.Attribute;
-import javax.xml.stream.events.StartElement;
-import javax.xml.stream.events.XMLEvent;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.Month;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 
 public class PostsAnalyzer {
 
-    private LocalDateTime firstPost; // Java 8 feature
-    private LocalDateTime lastPost; // Java 8 feature
+    private ZonedDateTime firstPost; // Java 8 feature
+    private ZonedDateTime lastPost; // Java 8 feature
     private int totalPosts;
     private int totalAcceptedPosts;
     private int avgScore;
@@ -29,7 +17,7 @@ public class PostsAnalyzer {
 
     public PostsAnalyzer() { }
 
-    public void analyzeDate(LocalDateTime postDate) {
+    public void analyzeDate(ZonedDateTime postDate) {
         analyzeFirstPost(postDate);
         analyzeLastPost(postDate);
     }
@@ -49,15 +37,15 @@ public class PostsAnalyzer {
     }
 
     public Details buildDetails() {
-        DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME; // Java 8 feature
+        DateTimeFormatter formatter = DateTimeFormatter.ISO_OFFSET_DATE_TIME; // Java 8 feature
         return new Details(firstPost.format(formatter), lastPost.format(formatter), totalPosts, totalAcceptedPosts, avgScore);
     }
 
-    public LocalDateTime getFirstPost() {
+    public ZonedDateTime getFirstPost() {
         return firstPost;
     }
 
-    public LocalDateTime getLastPost() {
+    public ZonedDateTime getLastPost() {
         return lastPost;
     }
 
@@ -73,7 +61,7 @@ public class PostsAnalyzer {
         return avgScore;
     }
 
-    private void analyzeFirstPost(LocalDateTime postDate) {
+    private void analyzeFirstPost(ZonedDateTime postDate) {
         if(firstPost == null) {
             firstPost = postDate;
         } else if(postDate.isBefore(firstPost)) {
@@ -81,7 +69,7 @@ public class PostsAnalyzer {
         }
     }
 
-    private void analyzeLastPost(LocalDateTime postDate) {
+    private void analyzeLastPost(ZonedDateTime postDate) {
         if(lastPost == null) {
             lastPost = postDate;
         } else if(postDate.isAfter(lastPost)) {

@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import com.example.DataAnalysisSpring.models.*;
 
 import java.net.URL;
-import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 @RestController
@@ -17,7 +18,9 @@ public class AnalyzerController {
     @PostMapping(value = "/analyze")
     public ResponseEntity<AnalysisResponse> Analyze(@RequestBody AnalysisRequest inputPayload) {
         AnalysisResponse response = new AnalysisResponse();
-        response.setAnalyseDate(LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+        String zonedTimeNowString =
+                ZonedDateTime.now(ZoneId.of("Europe/Warsaw")).format(DateTimeFormatter.ISO_OFFSET_DATE_TIME);
+        response.setAnalyseDate(zonedTimeNowString);
         String urlString = inputPayload.getUrl();
         try {
             URL url = new URL(urlString);
